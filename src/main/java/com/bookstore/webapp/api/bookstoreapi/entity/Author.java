@@ -24,4 +24,36 @@ public class Author {
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
 	private List<Book> books;
+	
+	public Author() {
+		super();
+	}
+
+	public Author(String name, List<Book> books) {
+		super();
+		this.name = name;
+		this.books = books;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
+
+	@Override
+	public String toString() {
+		return "Author [id=" + id + ", name=" + name + ", books=" + books + "]";
+	}
+	
 }

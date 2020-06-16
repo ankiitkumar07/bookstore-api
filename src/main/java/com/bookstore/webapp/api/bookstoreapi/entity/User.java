@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="users")
 public class User {
@@ -37,6 +39,7 @@ public class User {
 	private UserBookShelf userBookShelf;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	@JsonIgnore
 	private List<BookComment> bookComments;
 
 	public String getEncryptedPassword() {
@@ -45,6 +48,61 @@ public class User {
 
 	public String getUsername() {
 		return username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public UserProfile getUserProfile() {
+		return userProfile;
+	}
+
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
+	}
+
+	public UserBookShelf getUserBookShelf() {
+		return userBookShelf;
+	}
+
+	public void setUserBookShelf(UserBookShelf userBookShelf) {
+		this.userBookShelf = userBookShelf;
+	}
+
+	public List<BookComment> getBookComments() {
+		return bookComments;
+	}
+
+	public void setBookComments(List<BookComment> bookComments) {
+		this.bookComments = bookComments;
+	}
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", encryptedPassword=" + encryptedPassword + ", username=" + username
+				+ ", firstName=" + firstName + ", lastName=" + lastName + ", userProfile=" + userProfile
+				+ ", userBookShelf=" + userBookShelf + ", bookComments=" + bookComments + "]";
 	}
 	
 	

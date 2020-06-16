@@ -14,7 +14,7 @@ public class UserProfile {
 	
 	@Id
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "username")
 	private User user;
 	
 	@Column(name = "user_phone")
@@ -22,4 +22,38 @@ public class UserProfile {
 	
 	@Column(name = "user_pic_path")
 	private String userPicPath;
+	
+	public UserProfile() {
+		super();
+	}
+
+	public UserProfile(User user, Long userPhone, String userPicPath) {
+		super();
+		this.user = user;
+		this.userPhone = userPhone;
+		this.userPicPath = userPicPath;
+	}
+
+	public Long getUserPhone() {
+		return userPhone;
+	}
+
+	public void setUserPhone(Long userPhone) {
+		this.userPhone = userPhone;
+	}
+
+	public String getUserPicPath() {
+		return userPicPath;
+	}
+
+	public void setUserPicPath(String userPicPath) {
+		this.userPicPath = userPicPath;
+	}
+
+	@Override
+	public String toString() {
+		return "UserProfile [user=" + user + ", userPhone=" + userPhone + ", userPicPath=" + userPicPath + "]";
+	}
+	
+	
 }
