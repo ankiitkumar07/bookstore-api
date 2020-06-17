@@ -8,5 +8,5 @@ import com.bookstore.webapp.api.bookstoreapi.entity.User;
 import com.bookstore.webapp.api.bookstoreapi.entity.UserBookShelf;
 
 public interface UserBookShelfRepository extends CrudRepository<UserBookShelf, User> {
-	public List<UserBookShelf> findAllByUsername(String username);
+	public List<UserBookShelf> findAllByUser(User user);
 }

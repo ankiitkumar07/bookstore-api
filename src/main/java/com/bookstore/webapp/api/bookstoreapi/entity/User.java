@@ -1,5 +1,6 @@
 package com.bookstore.webapp.api.bookstoreapi.entity;
 
+
 import java.util.List;
 
 import javax.persistence.Column;
