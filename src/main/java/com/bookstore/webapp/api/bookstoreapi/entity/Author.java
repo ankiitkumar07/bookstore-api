@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.web.util.UriComponents;
+
 @Entity
 @Table(name = "authors")
 public class Author {
@@ -54,6 +56,11 @@ public class Author {
 	@Override
 	public String toString() {
 		return "Author [id=" + id + ", name=" + name + ", books=" + books + "]";
+	}
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return this.id;
 	}
 	
 }

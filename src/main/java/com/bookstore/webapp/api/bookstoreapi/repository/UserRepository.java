@@ -1,10 +1,9 @@
 package com.bookstore.webapp.api.bookstoreapi.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.bookstore.webapp.api.bookstoreapi.entity.User;
-import com.bookstore.webapp.api.bookstoreapi.entity.UserProfile;
 
-public interface UserRepository extends CrudRepository<User, String> {
+public interface UserRepository extends JpaRepository<User, String> {
 	User findByUsername(String username);
 }
