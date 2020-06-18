@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import org.springframework.web.util.UriComponents;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "authors")
 public class Author {
@@ -25,6 +27,7 @@ public class Author {
 	private String name;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
+	@JsonIgnore
 	private List<Book> books;
 	
 	public Author() {

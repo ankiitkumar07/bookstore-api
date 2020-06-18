@@ -12,7 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.springframework.beans.factory.annotation.Value;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,7 +27,7 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name = "name")
+	@Column(name = "title")
 	private String title;
 	
 	@Column(name = "summary")
@@ -39,7 +42,7 @@ public class Book {
 	@Column(name = "cover_path")
 	private String coverPath;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "author_id")
 	@JsonIgnore
 	private Author author;
@@ -69,10 +72,6 @@ public class Book {
 	public Long getId() {
 		return id;
 	}
-//
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
 
 	public String getTitle() {
 		return title;
