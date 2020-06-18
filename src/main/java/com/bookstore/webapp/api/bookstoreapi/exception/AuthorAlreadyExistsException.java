@@ -1,4 +1,4 @@
-package com.bookstore.webapp.api.bookstoreapi.controller;
+package com.bookstore.webapp.api.bookstoreapi.exception;
 
 public class AuthorAlreadyExistsException extends RuntimeException {
 

@@ -37,6 +37,11 @@ public class UserBookShelf {
 		this.books = books;
 	}
 
+	public UserBookShelf(User user2) {
+		// TODO Auto-generated constructor stub
+		this.user = user2;
+	}
+
 	public User getUser() {
 		return user;
 	}

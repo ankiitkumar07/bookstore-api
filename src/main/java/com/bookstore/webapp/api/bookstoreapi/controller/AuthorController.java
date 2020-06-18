@@ -15,6 +15,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriBuilder;
 
 import com.bookstore.webapp.api.bookstoreapi.entity.Author;
+import com.bookstore.webapp.api.bookstoreapi.exception.AuthorAlreadyExistsException;
 import com.bookstore.webapp.api.bookstoreapi.exception.AuthorNotFoundException;
 import com.bookstore.webapp.api.bookstoreapi.repository.AuthorRepository;
 

@@ -18,7 +18,7 @@ public class UserProfile {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "username")
 	private User user;
 	
@@ -39,6 +39,12 @@ public class UserProfile {
 		this.userPicPath = userPicPath;
 	}
 
+	public UserProfile(User user2) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.user = user2;
+	}
+
 	public Long getUserPhone() {
 		return userPhone;
 	}
@@ -55,10 +61,20 @@ public class UserProfile {
 		this.userPicPath = userPicPath;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	@Override
 	public String toString() {
 		return "UserProfile [user=" + user + ", userPhone=" + userPhone + ", userPicPath=" + userPicPath + "]";
 	}
+
+	
 	
 	
 }

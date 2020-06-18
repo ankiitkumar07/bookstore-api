@@ -6,7 +6,7 @@ import com.bookstore.webapp.api.bookstoreapi.entity.User;
 import com.bookstore.webapp.api.bookstoreapi.entity.UserBookShelf;
 import com.bookstore.webapp.api.bookstoreapi.entity.UserProfile;
 
-public interface UserProfileRepository extends JpaRepository<UserBookShelf, User> {
+public interface UserProfileRepository extends JpaRepository<UserProfile, Long> {
 
 	public UserProfile findByUser(User user);
 }

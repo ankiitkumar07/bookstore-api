@@ -33,10 +33,16 @@ public class User {
 	@Column(name = "last_name", nullable = false)
 	private String lastName;
 	
+	@Column(name = "role")
+	@JsonIgnore
+	private String role;
+	
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
+	@JsonIgnore
 	private UserProfile userProfile;
 	
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
+	@JsonIgnore
 	private UserBookShelf userBookShelf;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
@@ -53,6 +59,14 @@ public class User {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public void setEmail(String email) {
