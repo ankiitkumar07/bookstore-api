@@ -2,6 +2,7 @@ package com.bookstore.webapp.api.bookstoreapi.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -42,9 +43,8 @@ public class Book {
 	@Column(name = "cover_path")
 	private String coverPath;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "author_id")
-	@JsonIgnore
 	private Author author;
 	
 	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "books")
@@ -80,6 +80,14 @@ public class Book {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
 
 	public String getSummary() {
 		return summary;
@@ -111,14 +119,6 @@ public class Book {
 
 	public void setCoverPath(String coverPath) {
 		this.coverPath = coverPath;
-	}
-
-	public Author getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(Author author) {
-		this.author = author;
 	}
 
 	public List<UserBookShelf> getUserBookShelf() {
