@@ -47,6 +47,10 @@ public class Book {
 	@JoinColumn(name = "author_id")
 	private Author author;
 	
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "genre_id")
+	private Genre genre;
+	
 	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "books")
 	@JsonIgnore
 	private List<UserBookShelf> userBookShelf;
@@ -83,6 +87,10 @@ public class Book {
 	
 	public Author getAuthor() {
 		return author;
+	}
+
+	public Genre getGenre() {
+		return genre;
 	}
 
 	public void setAuthor(Author author) {

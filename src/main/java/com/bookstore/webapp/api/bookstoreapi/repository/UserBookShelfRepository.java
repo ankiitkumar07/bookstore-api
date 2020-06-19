@@ -6,7 +6,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 
-import com.bookstore.webapp.api.bookstoreapi.entity.Book;
 import com.bookstore.webapp.api.bookstoreapi.entity.User;
 import com.bookstore.webapp.api.bookstoreapi.entity.UserBookShelf;
 
