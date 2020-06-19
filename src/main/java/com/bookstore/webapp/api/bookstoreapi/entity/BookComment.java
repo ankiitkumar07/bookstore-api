@@ -18,11 +18,11 @@ public class BookComment {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "username")
 	private User user;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "book_id")
 	private Book book;
 	
@@ -46,6 +46,10 @@ public class BookComment {
 		this.commentTitle = commentTitle;
 		this.commentBody = commentBody;
 		this.rating = rating;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public User getUser() {
