@@ -66,6 +66,11 @@ public class UserBookShelf {
 	public String toString() {
 		return "UserBookShelf [user=" + user + ", book=" + books + "]";
 	}
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return this.id;
+	}
 	
 	
 	
